@@ -8,4 +8,9 @@ import {User} from '../shared/user.model';
 })
 export class UserListComponent {
   @Input() users: User[] = [];
+
+  delete(user: User): void {
+    this.users = this.users.filter(h => h !== user);
+    localStorage.setItem('users', JSON.stringify(this.users));
+  }
 }
