@@ -13,4 +13,9 @@ export class UserListComponent {
     this.users = this.users.filter(h => h !== user);
     localStorage.setItem('users', JSON.stringify(this.users));
   }
+
+  edit(user: User): void {
+    this.users = this.users.filter(h => h !== user);
+    localStorage.setItem('users', JSON.stringify(this.users));
+  }
 }
