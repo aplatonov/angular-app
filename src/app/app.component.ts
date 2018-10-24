@@ -24,6 +24,10 @@ export class AppComponent {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.users));
   }
 
+  editUser() {
+    console.log('hello from edit user');
+  }
+
   getCurrentUser() {
     return new User(this.users.length, '', '');
   }

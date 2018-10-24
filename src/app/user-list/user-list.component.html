@@ -2,7 +2,7 @@
 <div *ngFor="let user of users">
   <app-user [user]="user"></app-user>
   <button class="delete" title="delete user"
-      (click)="delete(user)">x</button>
+      (click)="deleteUser(user)">x</button>
   <button class="edit" title="edit user"
-      (click)="edit(user)">edit</button>
+      (click)="editUser(user)">edit</button>
 </div>

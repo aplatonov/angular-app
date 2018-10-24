@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {User} from '../shared/user.model';
 
 @Component({
@@ -8,14 +8,15 @@ import {User} from '../shared/user.model';
 })
 export class UserListComponent {
   @Input() users: User[] = [];
+  @Output() userEdit: EventEmitter<User> = new EventEmitter();
 
-  delete(user: User): void {
+  deleteUser(user: User): void {
     this.users = this.users.filter(h => h !== user);
     localStorage.setItem('users', JSON.stringify(this.users));
   }
 
-  edit(user: User): void {
-    this.users = this.users.filter(h => h !== user);
-    localStorage.setItem('users', JSON.stringify(this.users));
+  editUser(user: User): void {
+    console.log(user);
+    this.userEdit.emit(user);
   }
 }
